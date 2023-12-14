@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+{% block contenido %}
+
+{% if request.user.is_staff %}
+<h1>Eliminar publicación</h1>
+<form action="" method="POST">
+    {% csrf_token %}
+    ¿Estás seguro que deseas eliminar la publicacion?
+    <input type="submit" value="Eliminar">
+</form>
+
+{% else %}
+<h2>Usted no es usuario administrador</h2>
+{% endif %}
+{% endblock %}

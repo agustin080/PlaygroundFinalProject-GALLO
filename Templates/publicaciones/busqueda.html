@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block contenido %}
+<br>
+
+<form action='' method="GET">
+    <p> Título de la partitura: <input type = "text" name="nombre">
+    <br>
+    <br>
+    <input type = "submit" value="Enviar">
+ </form>
+
+{% for publicacion in lista %}
+
+    Título de la partitura: {{publicacion.titulo}}
+    <br>
+    <br>
+    Imagen: 
+    <br>
+    <img src="{{ publicacion.imagen.url }}" alt="" width = "800" height = "1000">
+{% endfor %}
+
+{% endblock %}

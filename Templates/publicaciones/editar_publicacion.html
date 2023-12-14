@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+{% block contenido %}
+
+{% if request.user.is_staff %}
+<h1>Editar publicación</h1>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Editar">
+</form>
+
+{% else %}
+<h2>Usted no es usuario administrador</h2>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+{% block contenido %}
+
+<h1>Miembros registrados</h1>
+
+{% for k in usuarios %}
+    <li>
+        {{k}}
+    </li>
+
+{% endfor %}
+{% endblock %}

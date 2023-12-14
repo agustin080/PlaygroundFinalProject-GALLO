@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+{% block contenido %}
+
+<h1>Lista de publicaciones</h1>
+
+{% for k in publicaciones %}
+    <li>{{k}}
+        <p>
+            <a href="{% url 'publicaciones detalle' k.pk %}">Ver</a>
+            |
+            <a href="{% url 'publicaciones editar' k.pk %}">Editar</a>
+            |
+            <a href="{% url 'publicaciones eliminar' k.pk %}">Borrar</a>
+        </p>
+    </li>
+
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{% block contenido %}
+
+<h1>Detalles de la publicación</h1>
+
+<p>Nombre y apellido: <i>{{publicacion.nombre_apellido}}</i></p>
+<p>Edad: <i>{{publicacion.edad}}</i></p>
+<p>Cancion: <i>{{publicacion.cancion}}</i></p>
+<p>Autor: <i>{{publicacion.autor}}</i></p>
+<p>Dificultad: <i>{{publicacion.dificultad}}</i></p>
+<p>Comentario: <i>{{publicacion.comentario}}</i></p>
+Imagen: 
+<br>
+<img src="{{ publicacion.imagen.url }}" alt="" width = "800" height = "1000">
+<p>
+    <a href="{% url 'publicaciones lista' %}">Volver a la lista</a>
+</p>
+
+{% endblock %}

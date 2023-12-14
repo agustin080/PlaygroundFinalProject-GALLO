@@ -1,0 +1,271 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Mentor Bootstrap Template - Index</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static "assets/img/favicon.png" %}" rel="icon">
+  <link href="{% static "assets/img/apple-touch-icon.png" %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static "assets/vendor/animate.css/animate.min.css" %}" rel="stylesheet">
+  <link href="{% static "assets/vendor/aos/aos.css" %}" rel="stylesheet">
+  <link href="{% static "assets/vendor/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+  <link href="{% static "assets/vendor/bootstrap-icons/bootstrap-icons.css" %}" rel="stylesheet">
+  <link href="{% static "assets/vendor/boxicons/css/boxicons.min.css" %}" rel="stylesheet">
+  <link href="{% static "assets/vendor/remixicon/remixicon.css" %}" rel="stylesheet">
+  <link href="{% static "assets/vendor/swiper/swiper-bundle.min.css" %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static "assets/css/style.css" %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Mentor
+  * Updated: Sep 18 2023 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/mentor-free-education-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="/">Partitures</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src={% static "assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="active" href="/">Inicio</a></li>
+          {% if not request.user.is_authenticated %}
+          <li><a href="/usuarios/login">Log In</a></li>
+          {% endif %}
+          <li><a href="/usuarios/lista">Miembros</a></li>
+          <li class="dropdown"><a href="/usuarios/proposito"><span>Propósito</span></i></a>
+          </li>
+          <li><a href="/usuarios/acercademi">Acerca de mí</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+      {% if not request.user.is_authenticated %}      
+      <a href="/usuarios/registro" class="get-started-btn">EMPIEZA YA</a>
+      {% else %}
+      <a href="/usuarios/logout" class="get-started-btn">LOGOUT</a>
+      {% endif %}
+    </div>
+  </header><!-- End Header -->
+<br>
+<br>
+<br>
+<br>
+<br>
+  <main id="main">
+
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features">
+      <div class="container" data-aos="fade-up">
+
+        <br>
+        <div class="row" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-lg-3 col-md-4">
+            <div class="icon-box">
+              <i class="ri-store-line" style="color: #ffbb2c;"></i>
+              <h3><a href="/usuarios/perfil_usuario">Perfil de Usuario</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+            <div class="icon-box">
+              <i class="ri-bar-chart-box-line" style="color: #5578ff;"></i>
+              <h3><a href="/publicaciones/crear/">Publicar</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+            <div class="icon-box">
+              <i class="ri-calendar-todo-line" style="color: #e80368;"></i>
+              <h3><a href="/publicaciones/lista/">Lista de Publicaciones</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
+            <div class="icon-box">
+              <i class="ri-paint-brush-line" style="color: #e361ff;"></i>
+              <h3><a href="/publicaciones/busqueda_bd">Buscar Partituras</a></h3>
+            </div>
+          </div>
+      </div>
+    </section><!-- End Features Section -->
+    <center>
+    {% block contenido %}
+    {% endblock %}
+    </center>
+<br>
+
+    <!-- ======= Popular Courses Section ======= -->
+    <section id="popular-courses" class="courses">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Partituras</h2>
+          <p>Más buscadas</p>
+        </div>
+
+        <div class="row" data-aos="zoom-in" data-aos-delay="100">
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="course-item">
+              <img src="{% static "assets/img/partitura1.jpg" %}" class="img-fluid" alt="...">
+              <div class="course-content">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <h4>Trending</h4>
+                </div>
+
+                <h3><a href="course-details.html">Sergei Rachmaninoff</a></h3>
+                <p>Prelude in C-sharp Minor from 5 Morceaux de fantaisie, Op. 3, No. 2, á Monsieur A. Arensky</p>
+                <div class="trainer d-flex justify-content-between align-items-center">
+                  <div class="trainer-profile d-flex align-items-center">
+                    <img src="{% static "assets/img/trainers/agustin.jpg" %}" class="img-fluid" alt="">
+                    <span>Agustín</span>
+                  </div>
+                  <div class="trainer-rank d-flex align-items-center">
+                    <i class="bx bx-user"></i>&nbsp;50
+                    &nbsp;&nbsp;
+                    <i class="bx bx-heart"></i>&nbsp;65
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> <!-- End Course Item-->
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+            <div class="course-item">
+              <img src="{% static "assets/img/partitura2.jpg" %}" class="img-fluid" alt="...">
+              <div class="course-content">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <h4>Trending</h4>
+                </div>
+
+                <h3><a href="course-details.html">Frédéric Chopin</a></h3>
+                <p>Nocturne Opus 9 No. 2</p>
+                <div class="trainer d-flex justify-content-between align-items-center">
+                  <div class="trainer-profile d-flex align-items-center">
+                    <img src="{% static "assets/img/trainers/camila.jpg" %}" class="img-fluid" alt="">
+                    <span>Camila</span>
+                  </div>
+                  <div class="trainer-rank d-flex align-items-center">
+                    <i class="bx bx-user"></i>&nbsp;35
+                    &nbsp;&nbsp;
+                    <i class="bx bx-heart"></i>&nbsp;42
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> <!-- End Course Item-->
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+            <div class="course-item">
+              <img src="{% static "assets/img/partitura3.jpg" %}" class="img-fluid" alt="...">
+              <div class="course-content">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <h4>Trending</h4>
+                </div>
+
+                <h3><a href="course-details.html">Ludwig van Beethoven</a></h3>
+                <p>Para Elisa, Clavierstuck in A Minor - WoO 59</p>
+                <div class="trainer d-flex justify-content-between align-items-center">
+                  <div class="trainer-profile d-flex align-items-center">
+                    <img src="{% static "assets/img/trainers/trainer-3.jpg" %}" class="img-fluid" alt="">
+                    <span>Brandon</span>
+                  </div>
+                  <div class="trainer-rank d-flex align-items-center">
+                    <i class="bx bx-user"></i>&nbsp;20
+                    &nbsp;&nbsp;
+                    <i class="bx bx-heart"></i>&nbsp;85
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> <!-- End Course Item-->
+
+        </div>
+
+      </div>
+    </section><!-- End Popular Courses Section -->
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Usuarios</h4>
+            <ul>
+              {% if not request.user.is_authenticated %}
+              <li><i class="bx bx-chevron-right"></i> <a href="/usuarios/registro">Registrarse</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/usuarios/login">Log In</a></li>
+              {% else %}
+              <li><i class="bx bx-chevron-right"></i> <a href="/usuarios/logout">Log Out</a></li>
+              {% endif %}
+              <li><i class="bx bx-chevron-right"></i> <a href="/usuarios/crear_perfil">Crear perfil de usuario</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/usuarios/perfil_usuario">Ver perfil de usuario</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Mentor</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/mentor-free-education-bootstrap-theme/ -->
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href="https://github.com/agustin080/PlaygroundFinalProject-GALLO" class="twitter"><i class="bx bxl-github"></i></a>
+        <a href="https://github.com/agustin080/PlaygroundFinalProject-GALLO" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="https://github.com/agustin080/PlaygroundFinalProject-GALLO" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="https://github.com/agustin080/PlaygroundFinalProject-GALLO" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="https://github.com/agustin080/PlaygroundFinalProject-GALLO" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static "assets/vendor/purecounter/purecounter_vanilla.js" %}"></script>
+  <script src="{% static "assets/vendor/aos/aos.js" %}"></script>
+  <script src="{% static "assets/vendor/bootstrap/js/bootstrap.bundle.min.js" %}"></script>
+  <script src="{% static "assets/vendor/swiper/swiper-bundle.min.js" %}"></script>
+  <script src="{% static "assets/vendor/php-email-form/validate.js" %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static "assets/js/main.js" %}"></script>
+
+</body>
+
+</html>
